@@ -33,11 +33,11 @@ NS_ :
 
 BS_:
 
-BU_: ADAS RADAR XXX EBCM ADAS PCM EPS VSA SCM BDY XXX EPB EON Vector__XXX NEO INTERCEPTOR ADAS RADAR XXX Vector__XX INTERCEPTO EO ADAS RADAR XXX Vector__X INTERCEPT E
+BU_: ADAS RADAR XXX EBCM ADAS PCM EPS VSA SCM BDY XXX EPB EON Vector__XXX NEO INTERCEPTOR ADAS RADAR XXX Vector__XX INTERCEPTO EO ADAS RADAR XXX Vector__X INTERCEPT E ADAS RADAR XXX Vector__ INTERCEP 
 
 
 BO_ 768 VEHICLE_STATE: 8 ADAS
- SG_ SET_ME_XF9 : 7|8@0+ (1,0) [0|255] "" Vector__X
+ SG_ SET_ME_XF9 : 7|8@0+ (1,0) [0|255] "" Vector__
 
 BO_ 769 VEHICLE_STATE2: 8 ADAS
  SG_ SET_ME_0F18510 : 7|28@0+ (1,0) [0|268435455] "" Vector__XXX
@@ -177,7 +177,7 @@ BO_ 1296 XXX_116: 8 RADAR
 BO_ 1297 XXX_117: 8 RADAR
 
 BO_ 512 GAS_COMMAND: 6 EON
- SG_ GAS_COMMAND : 7|16@0+ (0.253984064,-83.3) [0|1] "" INTERCEPT
+ SG_ GAS_COMMAND : 7|16@0+ (0.253984064,-83.3) [0|1] "" INTERCEP
 
 BO_ 513 GAS_SENSOR: 6 INTERCEPTOR
  SG_ INTERCEPTOR_GAS : 7|16@0+ (0.253984064,-83.3) [0|1] "" EON
@@ -233,16 +233,16 @@ BO_ 432 STANDSTILL: 7 VSA
  SG_ CHECKSUM : 51|4@0+ (1,0) [0|3] "" EON
 
 BO_ 464 WHEEL_SPEEDS: 8 VSA
- SG_ WHEEL_SPEED_FL : 7|15@0+ (0.01,0) [0|250] "kph" EON
  SG_ WHEEL_SPEED_FR : 8|15@0+ (0.01,0) [0|250] "kph" EON
  SG_ WHEEL_SPEED_RL : 25|15@0+ (0.01,0) [0|250] "kph" EON
  SG_ WHEEL_SPEED_RR : 42|15@0+ (0.01,0) [0|250] "kph" EON
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|3] "" EON
+ SG_ WHEEL_SPEED_FL : 7|15@0+ (0.01,0) [0|250] "kph" EON
 
 BO_ 490 VEHICLE_DYNAMICS: 8 VSA
- SG_ LONG_ACCEL : 23|16@0- (0.0015384,0) [-20|20] "m/s2" EON
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" EON
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|3] "" EON
+ SG_ LONG_ACCEL : 23|16@0- (0.0015384,0) [-20|20] "m/s2" EON
 
 BO_ 506 BRAKE_COMMAND: 8 ADAS
  SG_ COMPUTER_BRAKE : 7|10@0+ (1,0) [0|1] "" EBCM
@@ -296,12 +296,11 @@ BO_ 777 LOCK_STATUS: 8 XXX
  SG_ NEW_SIGNAL_2 : 32|8@1+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_1 : 31|8@0+ (1,0) [0|255] "" XXX
  SG_ NEW_SIGNAL_3 : 40|8@1+ (1,0) [0|255] "" XXX
- SG_ SPEED : 7|16@0+ (1,0) [0|31] "" XXX
  SG_ NEW_SIGNAL_4 : 16|8@1+ (1,0) [0|255] "" XXX
+ SG_ SPEED : 7|16@0+ (0.01,0) [0|31] "kph" XXX
 
 BO_ 780 ACC_HUD: 8 ADAS
  SG_ PCM_SPEED : 7|16@0+ (0.01,0) [0|250] "kph" BDY
- SG_ PCM_GAS : 23|8@0+ (1,0) [0|127] "" BDY
  SG_ CRUISE_SPEED : 31|8@0+ (1,0) [0|255] "" BDY
  SG_ DTC_MODE : 39|1@0+ (1,0) [0|1] "" BDY
  SG_ BOH : 38|1@0+ (1,0) [0|1] "" BDY
@@ -325,16 +324,17 @@ BO_ 780 ACC_HUD: 8 ADAS
  SG_ ICONS : 63|2@0+ (1,0) [0|1] "" BDY
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" BDY
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|3] "" BDY
+ SG_ PCM_GAS : 23|8@0+ (1,0) [0|127] "" BDY
 
 BO_ 804 CRUISE: 8 PCM
  SG_ HUD_SPEED_KPH : 7|8@0+ (1,0) [0|255] "kph" EON
- SG_ HUD_SPEED_MPH : 15|8@0+ (1,0) [0|255] "mph" EON
  SG_ TRIP_FUEL_CONSUMED : 23|16@0+ (1,0) [0|255] "" EON
  SG_ CRUISE_SPEED_PCM : 39|8@0+ (1,0) [0|255] "" EON
  SG_ BOH2 : 47|8@0- (1,0) [0|255] "" EON
  SG_ BOH3 : 55|8@0+ (1,0) [0|255] "" EON
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" EON
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|3] "" EON
+ SG_ HUD_SPEED_MPH : 15|8@0+ (1,0) [0|255] "mph" EON
 
 BO_ 829 LKAS_HUD: 5 ADAS
  SG_ CAM_TEMP_HIGH : 7|1@0+ (1,0) [0|255] "" BDY
@@ -371,7 +371,7 @@ BO_ 1029 DOORS_STATUS: 8 BDY
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|3] "" EON
 
 BO_ 148 KINEMATICS: 8 XXX
- SG_ LAT_ACCEL : 7|10@0+ (0.02,-512) [-20|20] "m/s2" E
+ SG_ LAT_ACCEL : 7|10@0+ (0.02,-512) [-20|20] "m/s2" 
 
 BO_ 228 STEERING_CONTROL: 5 ADAS
  SG_ STEER_TORQUE : 7|16@0- (1,0) [-3840|3840] "" EPS
@@ -464,11 +464,13 @@ BO_ 884 STALK_STATUS: 8 XXX
  SG_ HEADLIGHTS_ON : 54|1@0+ (1,0) [0|1] "" EON
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|3] "" EON
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" EON
+ SG_ NEW_SIGNAL_1 : 12|1@1+ (1,0) [0|3] "" XXX
 
 BO_ 891 WIPERS: 8 XXX
  SG_ WIPERS : 17|2@0+ (1,0) [0|3] "" EON
  SG_ CHECKSUM : 59|4@0+ (1,0) [0|3] "" EON
  SG_ COUNTER : 61|2@0+ (1,0) [0|3] "" EON
+ SG_ NEW_SIGNAL_1 : 34|1@1+ (1,0) [0|7] "" XXX
 
 BO_ 927 RADAR_HUD: 8 ADAS
  SG_ ZEROS_BOH : 7|17@0+ (1,0) [0|127] "" BDY
@@ -510,9 +512,13 @@ BO_ 1322 NEW_MSG_3: 8 XXX
 
 BO_ 1361 NEW_MSG_4: 8 XXX
  SG_ NEW_SIGNAL_1 : 24|3@1+ (1,0) [0|7] "" XXX
+ SG_ NEW_SIGNAL_2 : 32|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_3 : 37|3@0+ (1,0) [0|3] "" XXX
 
 BO_ 1365 NEW_MSG_5: 8 XXX
  SG_ NEW_SIGNAL_1 : 24|3@1+ (1,0) [0|7] "" XXX
+ SG_ NEW_SIGNAL_2 : 32|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_3 : 37|3@0+ (1,0) [0|3] "" XXX
 
 BO_ 1633 NEW_MSG_6: 8 XXX
  SG_ NEW_SIGNAL_1 : 6|15@0+ (1,0) [0|3] "" XXX
@@ -524,9 +530,13 @@ BO_ 1633 NEW_MSG_6: 8 XXX
 
 BO_ 1424 NEW_MSG_7: 8 XXX
  SG_ NEW_SIGNAL_1 : 24|3@1+ (1,0) [0|7] "" XXX
+ SG_ NEW_SIGNAL_2 : 32|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_3 : 37|3@0+ (1,0) [0|3] "" XXX
 
 BO_ 1600 NEW_MSG_8: 8 XXX
  SG_ NEW_SIGNAL_1 : 24|3@1+ (1,0) [0|7] "" XXX
+ SG_ NEW_SIGNAL_2 : 32|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_3 : 37|3@0+ (1,0) [0|3] "" XXX
 
 BO_ 1601 NEW_MSG_9: 8 XXX
  SG_ NEW_SIGNAL_1 : 16|1@1+ (1,0) [0|3] "" XXX
@@ -540,31 +550,53 @@ BO_ 1601 NEW_MSG_9: 8 XXX
  SG_ NEW_SIGNAL_7 : 17|1@1+ (1,0) [0|15] "" XXX
  SG_ NEW_SIGNAL_11 : 20|1@1+ (1,0) [0|3] "" XXX
  SG_ NEW_SIGNAL_10 : 18|1@1+ (1,0) [0|3] "" XXX
+ SG_ NEW_SIGNAL_12 : 56|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_13 : 61|3@0+ (1,0) [0|3] "" XXX
 
 BO_ 929 NEW_MSG_10: 8 XXX
+ SG_ NEW_SIGNAL_1 : 56|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_2 : 61|3@0+ (1,0) [0|3] "" XXX
 
 BO_ 476 NEW_MSG_11: 8 XXX
  SG_ NEW_SIGNAL_2 : 1|1@1+ (1,0) [0|7] "" XXX
- SG_ NEW_SIGNAL_1 : 10|11@0+ (1,0) [0|255] "" XXX
+ SG_ NEW_SIGNAL_1 : 11|12@0+ (1,0) [0|255] "" XXX
+ SG_ NEW_SIGNAL_3 : 48|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_4 : 53|4@0+ (1,0) [0|7] "" XXX
 
 BO_ 428 NEW_MSG_12: 8 XXX
  SG_ NEW_SIGNAL_1 : 7|16@0+ (1,0) [0|65535] "" XXX
+ SG_ NEW_SIGNAL_2 : 56|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_3 : 61|3@0+ (1,0) [0|3] "" XXX
 
 BO_ 470 untitled: 8 XXX
 
 BO_ 795 NEW_MSG_13: 8 XXX
  SG_ NEW_SIGNAL_1 : 31|1@1+ (1,0) [0|255] "" XXX
+ SG_ NEW_SIGNAL_2 : 56|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_3 : 61|3@0+ (1,0) [0|3] "" XXX
 
 BO_ 808 NEW_MSG_14: 8 XXX
  SG_ NEW_SIGNAL_1 : 47|1@0+ (1,0) [0|3] "" XXX
+ SG_ NEW_SIGNAL_2 : 56|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_3 : 61|3@0+ (1,0) [0|3] "" XXX
 
 BO_ 1027 NEW_MSG_15: 8 XXX
  SG_ NEW_SIGNAL_1 : 17|1@1+ (1,0) [0|65535] "" XXX
+ SG_ NEW_SIGNAL_2 : 32|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_3 : 37|3@0+ (1,0) [0|3] "" XXX
 
 BO_ 1108 NEW_MSG_16: 8 XXX
  SG_ NEW_SIGNAL_1 : 32|2@1+ (1,0) [0|3] "" XXX
  SG_ NEW_SIGNAL_2 : 56|4@1+ (1,0) [0|15] "" XXX
  SG_ NEW_SIGNAL_3 : 61|3@0+ (1,0) [0|3] "" XXX
+
+BO_ 800 NEW_MSG_17: 8 XXX
+ SG_ NEW_SIGNAL_1 : 56|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_2 : 61|3@0+ (1,0) [0|3] "" XXX
+
+BO_ 985 NEW_MSG_18: 8 XXX
+ SG_ NEW_SIGNAL_1 : 16|4@1+ (1,0) [0|15] "" XXX
+ SG_ NEW_SIGNAL_2 : 21|3@0+ (1,0) [0|3] "" XXX
 
 
 
@@ -600,6 +632,14 @@ VAL_ 806 CMBS_BUTTON 3 "pressed" 0 "released" ;
 VAL_ 891 WIPERS 4 "High" 2 "Low" 0 "Off" ;
 VAL_ 927 ACC_ALERTS 29 "esp_active_acc_canceled" 10 "b_pedal_applied" 9 "speed_too_low" 8 "speed_too_high" 7 "p_brake_applied" 6 "gear_no_d" 5 "seatbelt" 4 "too_steep_downhill" 3 "too_steep_uphill" 2 "too_close" 1 "no_vehicle_ahead" ;
 CM_ "AUTOGENERATED FILE, DO NOT EDIT"
+CM_ "Imported file _radar_nidec.dbc starts h";
+CM_ "Imported file _radar_nidec.dbc starts he
+CM_ "Imported file _radar_nidec.dbc starts he";
+CM_ "Imported file _radar_nidec.dbc starts her
+CM_ "Imported file _radar_nidec.dbc starts he";
+CM_ "Imported file _radar_nidec.dbc starts her
+CM_ "Imported file _radar_nidec.dbc starts her";
+CM_ "Imported file _radar_nidec.dbc starts here
 CM_ "Imported file _radar_nidec.dbc starts he";
 CM_ "Imported file _radar_nidec.dbc starts her
 CM_ "Imported file _radar_nidec.dbc starts her";
@@ -611,14 +651,16 @@ CM_ "Imported file _radar_nidec.dbc starts here"
 BS_:
 BU_: ADAS RADAR XXX
 BO_ 768 VEHICLE_STATE: 8 ADAS
-SG_ SET_ME_XF9 : 7|8@0+ (1,0) [0|255] "" Vector__";
+SG_ SET_ME_XF9 : 7|8@0+ (1,0) [0|255] "" Vector_";
 CM_ "Imported file _comma.dbc starts here"
 BO_ 512 GAS_COMMAND: 6 EON
-SG_ GAS_COMMAND : 7|16@0+ (0.253984064,-83.3) [0|1] "" INTERCEP";
+SG_ GAS_COMMAND : 7|16@0+ (0.253984064,-83.3) [0|1] "" INTERCE";
 CM_ "Imported file _honda_2017.dbc starts here"
-VERSION 
+VERSION
+CM_ "honda_civic_touring_2016_can.dbc starts her";
+CM_ "honda_civic_touring_2016_can.dbc starts here
 CM_ "honda_civic_touring_2016_can.dbc starts here";
 CM_ "honda_civic_touring_2016_can.dbc starts here"
 BO_ 148 KINEMATICS: 8 XXX
-SG_ LAT_ACCEL : 7|10@0+ (0.02,-512) [-20|20] "m/s2" ";
+SG_ LAT_ACCEL : 7|10@0+ (0.02,-512) [-20|20] "m/s2"";
 CM_ "CHFFR_METRIC 330 STEER_ANGLE STEER_ANGLE 0.36 180; CHFFR_METRIC 380 ENGINE_RPM ENGINE_RPM 1 0; CHFFR_METRIC 804 ENGINE_TEMPERATURE ENGINE_TEMPERATURE 1 0";
